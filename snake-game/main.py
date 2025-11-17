@@ -30,6 +30,13 @@ while game_is_on:
         score_board.update()
 
 
+    #detect end game
+    if -280 > snake.head.xcor() or snake.head.xcor() > 280 or -280 >snake.head.ycor() or snake.head.ycor() > 280 :
+        game_is_on = False
+        score_board.game_over()
+
+
+
 
 
 
