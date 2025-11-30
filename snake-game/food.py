@@ -1,5 +1,6 @@
 from turtle import Turtle
 import random
+FOOD_SIZE = 20
 class Food(Turtle):
     def __init__(self):
         super().__init__()
@@ -7,7 +8,7 @@ class Food(Turtle):
         self.penup()
         self.color("red")
         self.speed("fastest")
-        self.wid = self.resize()
+        self.wid = FOOD_SIZE
         self.refresh()
 
 

@@ -25,24 +25,25 @@ while game_is_on:
     time.sleep(0.1)
     snake.move()
     #detect eating food
-    if snake.head.distance(food) < food.wid*12:
+    if snake.head.distance(food) < food.wid:
         food.refresh()
         snake.extend()
-        food.wid = food.resize()
+        #food.wid = food.resize()
         score_board.update()
 
 
     #detect end game
-    if -280 > snake.head.xcor() or snake.head.xcor() > 280 or -280 >snake.head.ycor() or snake.head.ycor() > 280 :
+    if -300 > snake.head.xcor() or snake.head.xcor() > 300 or -300 >snake.head.ycor() or snake.head.ycor() > 300 :
         game_is_on = False
         score_board.game_over()
 
     #detect any collision with tail
     for segment in snake.turtles[1:]:
+        # if head collides with any segments of the tail tigger game over
         if snake.head.distance(segment) < 10:
             game_is_on = False
             score_board.game_over()
-    #if head collides with any segments of the tail tigger game over
+
 
 
 
