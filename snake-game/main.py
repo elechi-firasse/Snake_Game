@@ -65,13 +65,15 @@ while True:
         snake.head.xcor() < -300 or snake.head.xcor() > 300 or
         snake.head.ycor() < -300 or snake.head.ycor() > 300
     ):
-        game_is_on = False
-        score_board.game_over()
+        score_board.reset()
+        snake.reset()
+
 
     # detect any collision with tail
     for segment in snake.turtles[1:]:
         if snake.head.distance(segment) < 10:
-            game_is_on = False
-            score_board.game_over()
+            score_board.reset()
+            snake.reset()
+
 
 screen.exitonclick()
